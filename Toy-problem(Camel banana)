@@ -1,0 +1,16 @@
+total = int(input('Total no. of bananas : '))
+distance = int(input('Distance to cover : '))
+load_capacity = int(input('Max load capacity of camel : '))
+lose = 0
+start = total
+for i in range(distance):
+    while start > 0:
+        start = start-load_capacity
+        if start == 1:
+            lose = lose-1
+        lose = lose+2
+    lose = lose-1
+    start = total-lose
+    if start == 0:
+        break
+print("Maximum number of bananas that can be transferred to the destination is", start)
