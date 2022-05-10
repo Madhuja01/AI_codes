@@ -1,0 +1,21 @@
+graph = {
+  'A' : ['B','C'],
+  'B' : ['D', 'E'],
+  'C' : ['F'],
+  'D' : [],
+  'E' : [],
+  'F' : [],
+  'G' : []
+}
+
+visited_dfs = set()
+
+def dfs(visited_dfs, graph, node):
+    if node not in visited_dfs:
+        print (node, end=" ")
+        visited_dfs.add(node)
+        for neighbour in graph[node]:
+            dfs(visited_dfs, graph, neighbour)
+
+print("Depth First Search (Preorder traversal):" , end =" ")
+dfs(visited_dfs, graph, 'A')
